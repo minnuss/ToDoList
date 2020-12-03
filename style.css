@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container h1 {
+    font-size: 60px;
+    position: absolute;
+    top: 20px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    /* -webkit-text-stroke: 0.5px black; */
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(img/background.jpeg) no-repeat center;
+    background-size: cover;
+}
+
+.list-content {
+    position: relative;
+    width: 40%;
+    max-height: 85vh;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: rgba(21, 33, 77, 0.602);
+    justify-content: center;
+    flex: wrap;
+    box-shadow: -1px 1px 20px black;
+}
+
+.list-content ul {
+    width: 90%;
+    display: flex;
+    margin-left: 40px;
+    flex-direction: column;
+    list-style: decimal;
+}
+
+.list-content ul li {
+    width: max-content;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.input-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 58px;
+    max-width: 40%;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: rgba(21, 33, 77, 0.602);
+}
+
+/* gradient bottom color of input */
+.input-div:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 4px;
+    width: 99.5%;
+    margin: auto;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    /* background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6); */
+    background: linear-gradient(to right, #B294FF, #FF8BE2, #FFD26A, #F9F871, #e8c2fd, #4E97FA, #007F89, #57E6E6, #FF8BE2, #B294FF, #FF8BE2);
+    background-size: 1300% auto;
+    animation: gradient 6s linear infinite;
+}
+
+/* animation for gradient color of input */
+@keyframes gradient {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 100% 0
+    }
+}
+
+/* typing input color */
+.input-div input {
+    flex-grow: 1;
+    color: #ffffff;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* placeholder color */
+.input-div input::-webkit-input-placeholder {
+    color: #f2f6ff;
+}
+
+.input {
+    margin: 15px;
+    width: 20%;
+    height: 25px;
+    line-height: 20px;
+    border-radius: 8px;
+    outline: none;
+    border-style: none;
+    background: transparent;
+}
+
+/* btn for input */
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    color: rgb(123, 255, 255);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: rgba(21, 33, 77, 0.602);
+}
+
+/* classlist for javascript span X element */
+.spanX {
+    color: rgb(123, 255, 255);
+    text-decoration: line-through;
+}
+
+
+@media (max-width: 1200px) {
+    .list-content {
+        width: 60%;
+    }
+
+    .input-div {
+        max-width: 60%;
+    }
+
+    .input-div:after {
+        width: 99.2%;
+    }
+}
+
+
+@media (max-width: 720px) {
+    .list-content {
+        width: 70%;
+    }
+
+    .input-div {
+        max-width: 70%;
+    }
+
+    .input-div:after {
+        width: 99.2%;
+    }
+}
