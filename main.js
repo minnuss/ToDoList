@@ -9,6 +9,18 @@ input.addEventListener('keyup', (e) => {
     if (input.value.length >= 3 && e.keyCode === 13) {
         let createLiElement = document.createElement('li');
         createLiElement.textContent = input.value;
+
+        const listAll = document.querySelectorAll('li');
+        listAll.forEach(val => {
+            if (val.textContent === input.value) {
+                createLiElement.textContent = input.value + ' - item is already in the list';
+                createLiElement.style.color = 'blue';
+                setTimeout(function () {
+                    createLiElement.remove();
+                }, 3000);
+            };
+        });
+
         listContent.appendChild(createLiElement);
         input.value = '';
     };
